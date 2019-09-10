@@ -1,51 +1,43 @@
 <template>
-  <div>
+  <div style="height:100%">
     <view
+      @click="toDo()"
       v-if="weather==1"
-      class="bg weather rain"
-      style="background: url('http://download.tpengyun.cn/res/WeatherTop/rain_background.jpg');background-repeat: no-repeat;background-size: 100% 100%;"
+      class="bg weather rain viewBg"
+      style="background: url('http://download.tpengyun.cn/res/WeatherTop/rain_background.jpg');"
     >
-      <view class="wt_date" :style="'height:'+CustomBar+'px;'">
-        <view class="text" :style="'padding-top:'+StatusBar+'px;'">{{City}} {{date}} {{Desc}}</view>
+      <view class="wt_date" >
+        <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <view class="pm" :style="'padding-top:'+StatusBar+'px;'">PM2.5：{{pm25}}</view>
+      <view class="pm" :style="'padding-top:'+0.1+'rem;'">PM2.5：{{pm25}}</view>
+      <view class="tips">{{tips}}</view>
       <image
-        bindtap="toDo"
         data-weather="2"
         class="rainImgText"
         mode="widthFix"
-        src="http://download.tpengyun.cn/res/WeatherTop/rain_text.png"
+        src="../../static/lxr/rain_text.png"
       />
-      <view class="tips">{{tips}}</view>
-      <image
-        class="rainImgWindows"
-        mode="widthFix"
-        src="http://download.tpengyun.cn/res/WeatherTop/rain_windows.png"
-      />
+      <image class="rainImgWindows" mode="widthFix" src="../../static/lxr/rain_windows.png" />
     </view>
     <!-- 下雪天 -->
     <view
+      @click="toDo()"
       v-if="weather==2"
-      class="bg weather snow"
-      style=" background: url( 'http://download.tpengyun.cn/res/WeatherTop/snow_background.jpg');background-repeat: no-repeat;background-size: 100% 100%; "
+      class="bg weather snow viewBg"
+      style=" background: url( 'http://download.tpengyun.cn/res/WeatherTop/snow_background.jpg');"
     >
-      <view class="wt_date" :style="'height:'+CustomBar+'px;' ">
-        <view class="text" :style="'padding-top:'+StatusBar+'px;'">{{City}} {{date}} {{Desc}}</view>
+      <view class="wt_date" >
+        <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <view class="pm" :style="'padding-top:'+StatusBar+'px;'">PM2.5：{{pm25}}</view>
+      <view class="pm" :style="'padding-top:'+1+'rem;'">PM2.5：{{pm25}}</view>
+      <view class="tips">{{tips}}</view>
       <image
-        bindtap="toDo"
         data-weather="1"
         class="rainImgText"
         mode="widthFix"
-        src="http://download.tpengyun.cn/res/WeatherTop/snow_text.png"
+        src="../../static/lxr/snow_text.png"
       />
-      <view class="tips">{{tips}}</view>
-      <image
-        class="rainImgWindows"
-        mode="widthFix"
-        src="http://download.tpengyun.cn/res/WeatherTop/snow_decorate.png"
-      />
+      <image class="rainImgWindows" mode="widthFix" src="../../static/lxr/snow_decorate.png" />
     </view>
   </div>
 </template>
@@ -54,10 +46,6 @@
 export default {
   data() {
     return {
-      rain_bg: "http://download.tpengyun.cn/res/WeatherTop/rain_background.jpg", //下雨背景
-      snow_bg: "http://download.tpengyun.cn/res/WeatherTop/snow_background.jpg", //下雪背景
-      StatusBar: 0,
-      CustomBar: 0,
       weather: 1, //1为下雨 2为下雪
       City: "", //城市
       pm25: 0, //PM2.5
@@ -69,20 +57,10 @@ export default {
     };
   },
   mounted() {
-    this.init()
+    this.init();
   },
   methods: {
     init() {
-      uni.getSystemInfo({
-        success: e => {
-          console.log(e);
-          this.StatusBar = e.statusBarHeight;
-          let custom =uni.getMenuButtonBoundingClientRect();
-          console.log(custom);
-          this.Custom = custom;
-          this.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
-        }
-      });
       var that = this;
       uni.getLocation({
         //获取位置经纬度
@@ -100,7 +78,7 @@ export default {
             method: "GET",
             success: function(res) {
               console.log(res.data);
-              if(res.data.error==0){
+              if (res.data.error == 0) {
                 let baiduAPIdata = res.data.results[0];
                 let weather_data = baiduAPIdata.weather_data[0];
                 that.City = baiduAPIdata.currentCity; //城市
@@ -110,6 +88,7 @@ export default {
                 that.temperature = weather_data.temperature; //温度
                 that.date = weather_data.date; //日期
                 that.tips = baiduAPIdata.index[0].des; //穿衣提醒
+                console.log(that.tips);
               }
             }
           });
@@ -123,17 +102,19 @@ export default {
         }
       });
     },
-    toDo(e) {
-      console.log(e);
-      this.setData({
-        weather: e.currentTarget.dataset.weather
-      });
+    toDo() {
+      this.weather===1?this.weather=2:this.weather=1
     }
   }
 };
 </script>
 
 <style>
+.viewBg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 /* 
  *这个是直接从网上扒下来的，稍微做了点精简.
  *动画分为两层,一层为较慢,一层为较快的,这样更逼真一些!
@@ -170,7 +151,7 @@ export default {
 /* 下雨 */
 .weather.rain:before,
 .weather.rain:after {
-  background-image: url("http://download.tpengyun.cn/res/WeatherTop/rain.png");
+  background-image: url("../../static/lxr/rain.png");
   animation-duration: 2s; /*下雨较慢层，自行调整*/
 }
 
@@ -181,7 +162,7 @@ export default {
 /* 下雪 */
 .weather.snow:before,
 .weather.snow:after {
-  background-image: url("http://download.tpengyun.cn/res/WeatherTop/snow.png");
+  background-image: url("../../static/lxr/snow.png");
   animation-duration: 20s; /*下雨较慢层，自行调整*/
 }
 
@@ -259,6 +240,7 @@ page {
 }
 
 .rainImgText {
+  z-index: 10;
   width: 100%;
 }
 

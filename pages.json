@@ -8,9 +8,9 @@
 			"style": {}
 		},
 		{
-			"path":"pages/lxr/test",
+			"path":"pages/lxr/weather",
 			"style":{
-				"navigationBarTitleText": ""
+				"navigationStyle":"custom"
 			}
 		},
 		{
@@ -49,10 +49,10 @@
 			"selectedIconPath":"static/center-active.png",
 			"text":"工具箱"
 		},{
-			"pagePath":"pages/lxr/test",
+			"pagePath":"pages/lxr/weather",
 			"iconPath":"static/center.png",
 			"selectedIconPath":"static/center-active.png",
-			"text":"卢星儒"
+			"text":"小实验"
 		}]
 	},
 	"globalStyle": {
