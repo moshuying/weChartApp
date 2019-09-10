@@ -29,7 +29,7 @@
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <view class="pm" :style="'padding-top:'+1+'rem;'">PM2.5：{{pm25}}</view>
+      <view class="pm" :style="'padding-top:'+0.1+'rem;'">PM2.5：{{pm25}}</view>
       <view class="tips">{{tips}}</view>
       <image
         data-weather="1"
