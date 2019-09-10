@@ -1,0 +1,45 @@
+<template>
+  <div>{{json}}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      json: "123asdfad"
+    };
+  },
+  mounted() {
+    // this.getjson()
+    this.changeJson()
+  },
+  methods: {
+    changeJson(){
+      this.json="kdfal;skfjal;kdjasdfasdf"
+    },
+    getjson() {
+      uni.request({
+        url: "https://anapioficeandfire.com/api/characters/583",
+        // url:"/test.json",
+        data: {},
+        method: "GET", // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        // header: {
+        //   // 设置请求的 header
+        // },
+        success: function(res) {
+          this.json = JSON.stringify(res);
+        },
+        fail: function() {
+          this.json = "网络错误";
+        },
+        complete: function() {
+          this.json = "internet is ok ,but json failed";
+        }
+      });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

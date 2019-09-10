@@ -8,6 +8,19 @@
 			"style": {}
 		},
 		{
+			"path":"pages/lxr/test",
+			"style":{
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path":"pages/tool/main",
+			"style":{
+				"navigationBarTitleText": "前端工具箱",
+				"backgroundColor":"#ffffff"
+			}
+		},
+		{
 			"path": "pages/ucenter/ucenter",
 			"style": {
 				"navigationBarTitleText": "个人中心",
@@ -30,6 +43,16 @@
 			"iconPath": "static/center.png",
 			"selectedIconPath": "static/center-active.png",
 			"text": "我的"
+		},{
+			"pagePath":"pages/tool/main",
+			"iconPath":"static/center.png",
+			"selectedIconPath":"static/center-active.png",
+			"text":"工具箱"
+		},{
+			"pagePath":"pages/lxr/test",
+			"iconPath":"static/center.png",
+			"selectedIconPath":"static/center-active.png",
+			"text":"卢星儒"
 		}]
 	},
 	"globalStyle": {
