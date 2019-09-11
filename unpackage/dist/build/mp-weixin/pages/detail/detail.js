@@ -1,0 +1,1 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/detail/detail"],[],[["189e","common/runtime","common/vendor"]]]);
