@@ -1,0 +1,37 @@
+<template>
+  <div>
+    <div @click="navgo()">
+      <testImgBox :imgsrc="imgsrcList[0]" :text="textList[0]" :time="timeList[0]"/>
+    </div>
+  </div>
+</template>
+
+<script>
+import testImgBox from './list.nvue';
+export default {
+  components:{
+    testImgBox
+  },
+  data() {
+    return{
+      textList:['第一个实验成果'],
+      imgsrcList:['/static/lxr/test/weatherTemp.png'],
+      timeList:['2019年9月11日10:52:37']
+    }
+  },
+  mounted() {
+    // console.log(this.imgsrcList[0])
+  },
+  methods: {
+    navgo(){
+      console.log('navGo');
+      uni.navigateTo({
+        url: '/pages/lxr/weather'
+      });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

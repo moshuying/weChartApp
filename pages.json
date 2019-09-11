@@ -8,6 +8,10 @@
 			"style": {}
 		},
 		{
+			"path": "pages/lxr/main",
+			"style": {}
+		},
+		{
 			"path":"pages/lxr/weather",
 			"style":{
 				"navigationStyle":"custom"
@@ -49,7 +53,7 @@
 			"selectedIconPath":"static/center-active.png",
 			"text":"工具箱"
 		},{
-			"pagePath":"pages/lxr/weather",
+			"pagePath":"pages/lxr/main",
 			"iconPath":"static/center.png",
 			"selectedIconPath":"static/center-active.png",
 			"text":"小实验"

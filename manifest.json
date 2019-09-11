@@ -10,7 +10,9 @@
         "nvueCompiler" : "uni-app",
         "renderer" : "native",
         /* 5+App特有相关 */
-        "modules" : {},
+        "modules" : {
+            "OAuth" : {}
+        },
         /* 模块配置 */
         "distribute" : {
             /* 应用发布信息 */
@@ -39,11 +41,48 @@
                     "<uses-feature android:name=\"android.hardware.camera\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
             },
-            "ios" : {},
+            "ios" : {
+                "idfa" : false
+            },
             /* ios打包配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "oauth" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "static/icon/72x72.png",
+                    "xhdpi" : "static/icon/96x96.png",
+                    "xxhdpi" : "static/icon/144x144.png",
+                    "xxxhdpi" : "static/icon/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "static/icon/1024x1024.png",
+                    "ipad" : {
+                        "app" : "static/icon/76x76.png",
+                        "app@2x" : "static/icon/152x152.png",
+                        "notification" : "static/icon/20x20.png",
+                        "notification@2x" : "static/icon/40x40.png",
+                        "proapp@2x" : "static/icon/167x167.png",
+                        "settings" : "static/icon/29x29.png",
+                        "settings@2x" : "static/icon/58x58.png",
+                        "spotlight" : "static/icon/40x40.png",
+                        "spotlight@2x" : "static/icon/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "static/icon/120x120.png",
+                        "app@3x" : "static/icon/180x180.png",
+                        "notification@2x" : "static/icon/40x40.png",
+                        "notification@3x" : "static/icon/60x60.png",
+                        "settings@2x" : "static/icon/58x58.png",
+                        "settings@3x" : "static/icon/87x87.png",
+                        "spotlight@2x" : "static/icon/80x80.png",
+                        "spotlight@3x" : "static/icon/120x120.png"
+                    }
+                }
+            }
         }
     },
     /* SDK配置 */
@@ -74,7 +113,8 @@
     },
     "h5" : {
         "router" : {
-            "base" : "/demo/news/website/"
+            "base" : "/demo/news/website/",
+            "mode" : "history"
         },
         "template" : "h5.template.html",
         "optimization" : {
