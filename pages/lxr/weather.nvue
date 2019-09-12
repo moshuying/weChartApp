@@ -3,8 +3,7 @@
     <view
       @click="toDo()"
       v-if="weather==1"
-      class="bg weather rain viewBg"
-      :style="'background: url(\''+baseUrl+'/wechat/lxr/rain_background.jpg\');'"
+      class="bg weather rain viewBg rainBG"
     >
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
@@ -15,16 +14,15 @@
         data-weather="2"
         class="rainImgText"
         mode="widthFix"
-        :src="baseUrl+'/wechat/lxr/rain_text.png'"
+        :src="mainUrl+'/wechat/lxr/rain_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="baseUrl+'/wechat/lxr/rain_windows.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/lxr/rain_windows.png'" />
     </view>
     <!-- 下雪天 -->
     <view
       @click="toDo()"
       v-if="weather==2"
-      class="bg weather snow viewBg"
-      :style="'background: url(\''+baseUrl+'/wechat/lxr/snow_background.jpg\');'"
+      class="bg weather snow viewBg snowBG"
     >
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
@@ -35,9 +33,9 @@
         data-weather="1"
         class="rainImgText"
         mode="widthFix"
-        :src="baseUrl+'/wechat/lxr/snow_text.png'"
+        :src="mainUrl+'/wechat/lxr/snow_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="baseUrl+'/wechat/lxr/snow_decorate.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/lxr/snow_decorate.png'" />
     </view>
   </div>
 </template>
@@ -47,7 +45,7 @@ import config from '@/common/config.js'
 export default {
   data() {
     return {
-      baseUrl:config.baseurl,
+      mainUrl:config.baseurl,
       weather: 1, //1为下雨 2为下雪
       City: "", //城市
       pm25: 0, //PM2.5
@@ -111,7 +109,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+$mainUrl:'http://wechat.moshuying.top:7002/public';
+.snowBG{
+  background-image: url(''+$mainUrl+'/wechat/lxr/snow_background.jpg');
+}
+.rainBG{
+  background-image: url(''+$mainUrl+'/wechat/lxr/rain_background.jpg');
+}
 .viewBg {
   background-repeat: no-repeat;
   background-size: cover;

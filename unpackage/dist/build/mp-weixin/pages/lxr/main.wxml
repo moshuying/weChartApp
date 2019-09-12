@@ -1,1 +1,0 @@
-<view class="_div data-v-e97ef824"><view data-event-opts="{{[['tap',[['navgo']]]]}}" bindtap="__e" class="_div data-v-e97ef824"><test-img-box vue-id="1" imgsrc="{{imgsrcList[0]}}" text="{{textList[0]}}" time="{{timeList[0]}}" class="data-v-e97ef824" bind:__l="__l"></test-img-box></view></view>

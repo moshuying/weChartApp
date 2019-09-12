@@ -1,2 +1,0 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/lxr/weather"],[],[[41,"common/runtime","common/vendor"]]]);
-//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/lxr/weather.js.map
