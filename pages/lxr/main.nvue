@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import config from '@/common/config.js'
 import testImgBox from './list.nvue';
 export default {
   components:{
@@ -15,12 +16,12 @@ export default {
   data() {
     return{
       textList:['第一个实验成果'],
-      imgsrcList:['/static/lxr/test/weatherTemp.png'],
+      imgsrcList:[config.baseurl+'/wechat/lxr/test/weatherTemp.png'],
       timeList:['2019年9月11日10:52:37']
     }
   },
   mounted() {
-    // console.log(this.imgsrcList[0])
+    
   },
   methods: {
     navgo(){

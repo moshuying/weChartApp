@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.imgsrc)
+    // console.log(this.imgsrc)
   }
 }
 </script>

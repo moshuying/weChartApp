@@ -4,7 +4,7 @@
       @click="toDo()"
       v-if="weather==1"
       class="bg weather rain viewBg"
-      style="background: url('http://download.tpengyun.cn/res/WeatherTop/rain_background.jpg');"
+      :style="'background: url(\''+baseUrl+'/wechat/lxr/rain_background.jpg\');'"
     >
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
@@ -15,16 +15,16 @@
         data-weather="2"
         class="rainImgText"
         mode="widthFix"
-        src="../../static/lxr/rain_text.png"
+        :src="baseUrl+'/wechat/lxr/rain_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" src="../../static/lxr/rain_windows.png" />
+      <image class="rainImgWindows" mode="widthFix" :src="baseUrl+'/wechat/lxr/rain_windows.png'" />
     </view>
     <!-- 下雪天 -->
     <view
       @click="toDo()"
       v-if="weather==2"
       class="bg weather snow viewBg"
-      style=" background: url( 'http://download.tpengyun.cn/res/WeatherTop/snow_background.jpg');"
+      :style="'background: url(\''+baseUrl+'/wechat/lxr/snow_background.jpg\');'"
     >
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
@@ -35,17 +35,19 @@
         data-weather="1"
         class="rainImgText"
         mode="widthFix"
-        src="../../static/lxr/snow_text.png"
+        :src="baseUrl+'/wechat/lxr/snow_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" src="../../static/lxr/snow_decorate.png" />
+      <image class="rainImgWindows" mode="widthFix" :src="baseUrl+'/wechat/lxr/snow_decorate.png'" />
     </view>
   </div>
 </template>
 
 <script>
+import config from '@/common/config.js'
 export default {
   data() {
     return {
+      baseUrl:config.baseurl,
       weather: 1, //1为下雨 2为下雪
       City: "", //城市
       pm25: 0, //PM2.5
@@ -151,7 +153,7 @@ export default {
 /* 下雨 */
 .weather.rain:before,
 .weather.rain:after {
-  background-image: url("../../static/lxr/rain.png");
+  background-image: url("http://wechat.moshuying.top:7002/public/wechat/lxr/rain.png");
   animation-duration: 2s; /*下雨较慢层，自行调整*/
 }
 
@@ -162,7 +164,7 @@ export default {
 /* 下雪 */
 .weather.snow:before,
 .weather.snow:after {
-  background-image: url("../../static/lxr/snow.png");
+  background-image: url("http://wechat.moshuying.top:7002/public/wechat/lxr/snow.png");
   animation-duration: 20s; /*下雨较慢层，自行调整*/
 }
 
