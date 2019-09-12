@@ -8,7 +8,11 @@
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <view class="pm" :style="'padding-top:'+0.1+'rem;'">PM2.5：{{pm25}}</view>
+      <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
+        <button type="default">
+          <view class="pm" :style="'padding-top:'+0.1+'rem;'">&lt; PM2.5：{{pm25}}</view>
+        </button>
+      </navigator>
       <view class="tips">{{tips}}</view>
       <image
         data-weather="2"
@@ -27,7 +31,11 @@
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <view class="pm" :style="'padding-top:'+0.1+'rem;'">PM2.5：{{pm25}}</view>
+      <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
+        <button type="default">
+          <view class="pm" :style="'padding-top:'+0.1+'rem;'">&lt; PM2.5：{{pm25}}</view>
+        </button>
+      </navigator>
       <view class="tips">{{tips}}</view>
       <image
         data-weather="1"
