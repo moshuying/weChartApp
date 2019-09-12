@@ -6,7 +6,7 @@
       class="bg weather rain viewBg rainBG"
     >
       <view class="wt_date" >
-        <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
+        <view class="text" :style="'padding-top:'+6+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
       <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
         <button type="default">
@@ -29,7 +29,7 @@
       class="bg weather snow viewBg snowBG"
     >
       <view class="wt_date" >
-        <view class="text" :style="'padding-top:'+4+'rem;'">{{City}} {{date}} {{Desc}}</view>
+        <view class="text" :style="'padding-top:'+6+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
       <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
         <button type="default">
