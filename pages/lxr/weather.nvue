@@ -118,12 +118,12 @@ export default {
 </script>
 
 <style lang="scss">
-$mainUrl:'http://wechat.moshuying.top:7002/public';
+@import '../../common/config.scss';
 .snowBG{
-  background-image: url(''+$mainUrl+'/wechat/lxr/snow_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/lxr/snow_background.jpg');
 }
 .rainBG{
-  background-image: url(''+$mainUrl+'/wechat/lxr/rain_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/lxr/rain_background.jpg');
 }
 .viewBg {
   background-repeat: no-repeat;

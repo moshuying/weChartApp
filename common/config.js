@@ -1,3 +1,4 @@
+import config from './config.scss';
 export default{
-  baseurl:'http://wechat.moshuying.top:7002/public'
+  baseurl:config.weatherUrl
 }
