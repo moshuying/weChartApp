@@ -31,7 +31,7 @@ export default {
       uni.navigateTo({
         url: '/pages/lxr/weather'
       });
-    }
+    },
     navgo2(){
       uni.navigateTo({
         url: '/pages/lxr/express'

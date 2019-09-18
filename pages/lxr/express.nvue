@@ -1,30 +1,34 @@
 <template>
   <div>
-    <button @click="test()">测试按钮</button>
-    <div>
-      {{res}}
-    </div>
+    <button @click="init()">测试按钮</button>
+    <div>{{JSON.stringify(res)}}</div>
   </div>
 </template>
 
 <script>
-import express from './express.js'
   export default {
     data() {
       return {
-        res:''
+        text:'',
+        res:'',
       }
     },mounted() {
     },
     methods: {
+      async init(){
+        let res = await uni.request({
+          method:'GET',
+          url:'http://47.107.231.9:7002/express',
+          data:{queryId:'YT4089928762666'}
+          });
+        this.res = res[1].data
+        
+      },
       test(){
-        let queryIs = new express('YT4089928762666');
-        this.res = JSON.stringify(queryIs.getres());
       }
     },
   }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
