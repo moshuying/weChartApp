@@ -12,6 +12,10 @@
 			"style": {}
 		},
 		{
+			"path": "/pages/lxr/express",
+			"style": {}
+		},
+		{
 			"path":"pages/lxr/weather",
 			"style":{
 				"navigationStyle":"custom"

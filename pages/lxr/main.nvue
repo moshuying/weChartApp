@@ -3,6 +3,9 @@
     <div @click="navgo()">
       <testImgBox :imgsrc="imgsrcList[0]" :text="textList[0]" :time="timeList[0]"/>
     </div>
+    <div @click="navgo2()">
+      <testImgBox :imgsrc="imgsrcList[1]" :text="textList[1]" :time="timeList[1]"/>
+    </div>
   </div>
 </template>
 
@@ -15,9 +18,9 @@ export default {
   },
   data() {
     return{
-      textList:['第一个实验成果'],
-      imgsrcList:[config.baseurl+'/wechat/lxr/test/weatherTemp.png'],
-      timeList:['2019年9月11日10:52:37']
+      textList:['天气查询 使用百度地图api','自定义爬虫实现快递单号查询'],
+      imgsrcList:[config.baseurl+'/wechat/lxr/test/weatherTemp.png',config.baseurl+'/wechat/lxr/test/weatherTemp.png'],
+      timeList:['2019年9月11日10:52:37','2019年9月18日20:30:39']
     }
   },
   mounted() {
@@ -25,9 +28,13 @@ export default {
   },
   methods: {
     navgo(){
-      console.log('navGo');
       uni.navigateTo({
         url: '/pages/lxr/weather'
+      });
+    }
+    navgo2(){
+      uni.navigateTo({
+        url: '/pages/lxr/express'
       });
     }
   }

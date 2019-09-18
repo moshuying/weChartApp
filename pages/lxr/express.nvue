@@ -1,0 +1,30 @@
+<template>
+  <div>
+    <button @click="test()">测试按钮</button>
+    <div>
+      {{res}}
+    </div>
+  </div>
+</template>
+
+<script>
+import express from './express.js'
+  export default {
+    data() {
+      return {
+        res:''
+      }
+    },mounted() {
+    },
+    methods: {
+      test(){
+        let queryIs = new express('YT4089928762666');
+        this.res = JSON.stringify(queryIs.getres());
+      }
+    },
+  }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
