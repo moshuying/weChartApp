@@ -166,7 +166,7 @@ export default {
 /* 下雨 */
 .weather.rain:before,
 .weather.rain:after {
-  background-image: url("http://wechat.moshuying.top:7002/public/wechat/lxr/rain.png");
+  background-image: url($weatherMainUrl+"/wechat/lxr/rain.png");
   animation-duration: 2s; /*下雨较慢层，自行调整*/
 }
 
@@ -177,7 +177,7 @@ export default {
 /* 下雪 */
 .weather.snow:before,
 .weather.snow:after {
-  background-image: url("http://wechat.moshuying.top:7002/public/wechat/lxr/snow.png");
+  background-image: url($weatherMainUrl+"/wechat/lxr/snow.png");
   animation-duration: 20s; /*下雨较慢层，自行调整*/
 }
 
