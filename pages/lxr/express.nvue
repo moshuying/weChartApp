@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <button @click="init()">测试按钮</button>
+  <div class="main">
+    <view class="title">
+        <input class="uni-input" @input="onKeyInput" placeholder="输入快递单号" :value="queryId" />
+        <view @click="init()">完成</view>
+    </view>
     <div>{{JSON.stringify(res)}}</div>
   </div>
 </template>
@@ -11,19 +14,24 @@
       return {
         text:'',
         res:'',
+        queryId:'YT4089928762666'
       }
     },mounted() {
     },
     methods: {
       async init(){
+        console.log(this.queryId)
         let res = await uni.request({
           method:'GET',
           url:'http://47.107.231.9:7002/express',
-          data:{queryId:'YT4089928762666'}
+          data:{queryId:this.queryId}
           });
         this.res = res[1].data
         
       },
+      onKeyInput: function(event) {
+            this.queryId = event.target.value
+        },
       test(){
       }
     },
@@ -31,4 +39,14 @@
 </script>
 
 <style lang="scss" scoped>
+.main{
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 </style>

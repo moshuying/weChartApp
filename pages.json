@@ -13,7 +13,11 @@
 		},
 		{
 			"path": "pages/lxr/express",
-			"style": {}
+			"style": {
+				"app-plus": {
+					"softinputNavBar": "none"
+				}
+			}
 		},
 		{
 			"path": "pages/lxr/weather",
