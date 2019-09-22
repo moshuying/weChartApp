@@ -1,0 +1,1 @@
+<view class="mainbox _div data-v-41e9ecea"><image class="listimg data-v-41e9ecea" mode="{{mode}}" src="{{imgsrc}}"></image><view class="info _div data-v-41e9ecea"><label class="_span data-v-41e9ecea">{{text}}</label><label class="_span data-v-41e9ecea">{{time}}</label></view></view>
