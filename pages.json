@@ -1,22 +1,15 @@
 {
-	"pages": [{
-			"path": "pages/list/list",
-			"style": {}
-		},
-		{
-			"path": "pages/detail/detail",
-			"style": {}
-		},
+	"pages": [
 		{
 			"path": "pages/lxr/main",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "作品列表"
+			}
 		},
 		{
 			"path": "pages/lxr/express",
 			"style": {
-				"app-plus": {
-					"softinputNavBar": "none"
-				}
+				"navigationBarTitleText": "查快递"
 			}
 		},
 		{
@@ -25,13 +18,13 @@
 				"navigationStyle": "custom"
 			}
 		},
-		{
-			"path": "pages/tool/main",
-			"style": {
-				"navigationBarTitleText": "前端工具箱",
-				"backgroundColor": "#ffffff"
-			}
-		},
+		// {
+		// 	"path": "pages/tool/main",
+		// 	"style": {
+		// 		"navigationBarTitleText": "前端工具箱",
+		// 		"backgroundColor": "#ffffff"
+		// 	}
+		// },
 		{
 			"path": "pages/ucenter/ucenter",
 			"style": {
@@ -46,25 +39,20 @@
 		"backgroundColor": "#FFFFFF",
 		"borderStyle": "black",
 		"list": [{
-			"pagePath": "pages/list/list",
-			"iconPath": "static/home.png",
-			"selectedIconPath": "static/home-active.png",
-			"text": "资讯"
+			"pagePath": "pages/lxr/main",
+			"iconPath": "static/center.png",
+			"selectedIconPath": "static/center-active.png",
+			"text": "小实验"
+		// },{
+		// 	"pagePath": "pages/tool/main",
+		// 	"iconPath": "static/center.png",
+		// 	"selectedIconPath": "static/center-active.png",
+		// 	"text": "工具箱"
 		}, {
 			"pagePath": "pages/ucenter/ucenter",
 			"iconPath": "static/center.png",
 			"selectedIconPath": "static/center-active.png",
 			"text": "我的"
-		}, {
-			"pagePath": "pages/tool/main",
-			"iconPath": "static/center.png",
-			"selectedIconPath": "static/center-active.png",
-			"text": "工具箱"
-		}, {
-			"pagePath": "pages/lxr/main",
-			"iconPath": "static/center.png",
-			"selectedIconPath": "static/center-active.png",
-			"text": "小实验"
 		}]
 	},
 	"globalStyle": {
@@ -77,7 +65,7 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{
 			"name": "", //模式名称
-			"path": "pages/lxr/express", //启动页面，必选
+			"path": "", //启动页面，必选
 			"query": "" //启动参数，在页面的onLoad函数里面得到
 		}]
 	}
