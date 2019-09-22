@@ -12,7 +12,7 @@
 	],
 	"tabBar": {
 		"color": "#000000",
-		"selectedColor": "#2F85FC",
+		"selectedColor": "#FFFFFF",
 		"backgroundColor": "#FFFFFF",
 		"borderStyle": "black",
 		"list": [{
@@ -30,7 +30,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "前端工具箱",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
 	}
 }
