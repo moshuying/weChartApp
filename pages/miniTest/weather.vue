@@ -8,7 +8,7 @@
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+6+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
+      <navigator url="/pages/miniTest/main" open-type="switchTab" hover-class="other-navigator-hover">
         <button type="default">
           <view class="pm" :style="'padding-top:'+0.1+'rem;'">&lt; PM2.5：{{pm25}}</view>
         </button>
@@ -18,9 +18,9 @@
         data-weather="2"
         class="rainImgText"
         mode="widthFix"
-        :src="mainUrl+'/wechat/lxr/rain_text.png'"
+        :src="mainUrl+'/wechat/miniTest/rain_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/lxr/rain_windows.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/miniTest/rain_windows.png'" />
     </view>
     <!-- 下雪天 -->
     <view
@@ -31,7 +31,7 @@
       <view class="wt_date" >
         <view class="text" :style="'padding-top:'+6+'rem;'">{{City}} {{date}} {{Desc}}</view>
       </view>
-      <navigator url="/pages/lxr/main" open-type="switchTab" hover-class="other-navigator-hover">
+      <navigator url="/pages/miniTest/main" open-type="switchTab" hover-class="other-navigator-hover">
         <button type="default">
           <view class="pm" :style="'padding-top:'+0.1+'rem;'">&lt; PM2.5：{{pm25}}</view>
         </button>
@@ -41,9 +41,9 @@
         data-weather="1"
         class="rainImgText"
         mode="widthFix"
-        :src="mainUrl+'/wechat/lxr/snow_text.png'"
+        :src="mainUrl+'/wechat/miniTest/snow_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/lxr/snow_decorate.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/miniTest/snow_decorate.png'" />
     </view>
   </div>
 </template>
@@ -120,10 +120,10 @@ export default {
 <style lang="scss">
 @import '../../common/config.scss';
 .snowBG{
-  background-image: url(''+$weatherMainUrl+'/wechat/lxr/snow_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/miniTest/snow_background.jpg');
 }
 .rainBG{
-  background-image: url(''+$weatherMainUrl+'/wechat/lxr/rain_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/miniTest/rain_background.jpg');
 }
 .viewBg {
   background-repeat: no-repeat;
@@ -166,7 +166,7 @@ export default {
 /* 下雨 */
 .weather.rain:before,
 .weather.rain:after {
-  background-image: url($weatherMainUrl+"/wechat/lxr/rain.png");
+  background-image: url($weatherMainUrl+"/wechat/miniTest/rain.png");
   animation-duration: 2s; /*下雨较慢层，自行调整*/
 }
 
@@ -177,7 +177,7 @@ export default {
 /* 下雪 */
 .weather.snow:before,
 .weather.snow:after {
-  background-image: url($weatherMainUrl+"/wechat/lxr/snow.png");
+  background-image: url($weatherMainUrl+"/wechat/miniTest/snow.png");
   animation-duration: 20s; /*下雨较慢层，自行调整*/
 }
 

@@ -18,9 +18,9 @@ export default {
   },
   data() {
     return{
-      textList:['天气查询 使用百度地图api','自定义爬虫实现快递单号查询'],
-      imgsrcList:[config.baseurl+'/wechat/lxr/test/weatherTemp.png',config.baseurl+'/wechat/lxr/test/express.png'],
-      timeList:['2019年9月11日10:52:37','2019年9月18日20:30:39']
+      textList:['天气查询 使用百度地图api','自定义爬虫实现快递单号查询','threejs'],
+      imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',config.baseurl+'/wechat/miniTest/test/express.png',config.baseurl+'/wechat/miniTest/test/express.png'],
+      timeList:['2019年9月11日10:52:37','2019年9月18日20:30:39','2019年9月23日10:45:34']
     }
   },
   mounted() {

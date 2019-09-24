@@ -1,13 +1,18 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/miniTest/main"
-		},{
+			"path": "pages/miniTest/faceid/index"
+			// "path": "pages/miniTest/main"
+		}, {
+			"path": "pages/miniTest/threejs/fbxloader"
+		}, {
 			"path": "pages/miniTest/weather"
-		},{
+		}, {
 			"path": "pages/miniTest/express"
-		},{
+		}, {
 			"path": "pages/ucenter/ucenter"
+		},{
+			"path": "pages/miniTest/main"
 		}
 	],
 	"tabBar": {
