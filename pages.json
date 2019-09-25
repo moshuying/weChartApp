@@ -1,8 +1,8 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/miniTest/faceid/index"
-			// "path": "pages/miniTest/main"
+			// "path": "pages/miniTest/faceid/index"
+			"path": "pages/miniTest/main"
 		}, {
 			"path": "pages/miniTest/threejs/fbxloader"
 		}, {
@@ -12,12 +12,13 @@
 		}, {
 			"path": "pages/ucenter/ucenter"
 		},{
-			"path": "pages/miniTest/main"
+			// "path": "pages/miniTest/main",
+			"path": "pages/miniTest/faceid/index"
 		}
 	],
 	"tabBar": {
 		"color": "#000000",
-		"selectedColor": "#FFFFFF",
+		"selectedColor": "#000000",
 		"backgroundColor": "#FFFFFF",
 		"borderStyle": "black",
 		"list": [{

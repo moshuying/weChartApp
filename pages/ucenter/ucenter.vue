@@ -93,7 +93,7 @@
 		width: 750upx;
 		height: 240upx;
 		padding: 20upx;
-		background-color: #2F85FC;
+		background-color: #f8f8f8;
 		flex-direction: row;
 		align-items: center;
 	}
@@ -121,7 +121,7 @@
 		height: 60upx;
 		line-height: 60upx;
 		font-size: 38upx;
-		color: #FFFFFF;
+		color: #000;
 	}
 
 	.go-login-navigat-arrow {

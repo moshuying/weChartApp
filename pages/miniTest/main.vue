@@ -3,9 +3,9 @@
     <div @click="navgo()">
       <testImgBox :imgsrc="imgsrcList[0]" :text="textList[0]" :time="timeList[0]"/>
     </div>
-    <div @click="navgo2()">
+   <!-- <div @click="navgo2()">
       <testImgBox :imgsrc="imgsrcList[1]" :text="textList[1]" :time="timeList[1]"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
