@@ -1,11 +1,16 @@
 <template>
   <view>
-    <camera device-position="front" flash="auto" @error="error" style="width: 100%; height: 500upx;">
-      <cover-image :src="mainUrl+'/wechat/miniTest/scan-img.png'" class="scan-img"></cover-image>
+    <camera device-position="front" flash="auto" @error="error" 
+		:style="'width: 100%; height:'+height+'px;'" 
+		class="camercss">
+		<cover-view class="scantext">{{tips}}</cover-view>
+      <cover-image :style="'width: 100%; height:'+height+'px;'" 
+										:src="mainUrl+'/wechat/miniTest/scan-img.png'"
+										class="scan-img">
+			</cover-image>
     </camera>
-    <view class="scan-text">{{tips}}</view>
-    <button type="primary" @click="takePhoto">拍照</button>
-    <button type="primary" @click="uploade(base64is)">选择照片</button>
+    <!-- <button type="primary" @click="takePhoto">拍照</button>
+    <button type="primary" @click="uploade(base64is)">选择照片</button> -->
     <!-- <image mode="widthFix" class="photos-box" :src="src"></image> -->
   </view>
 </template>
@@ -15,6 +20,7 @@ import config from '@/common/config.js'
 export default {
   data() {
     return {
+			height:0,
       src: '',
       mainUrl:config.baseurl,
       tips:'必须要把正脸放在白框里哦',
@@ -22,10 +28,15 @@ export default {
     }
   },
   mounted() {
+		const that = this
+		this.changeHeight()
     this.src='data:image/jpeg;base64,' +this.base64is
+		let scanphoto=setInterval(()=>{
+			that.takePhoto()
+		},1000)
   },
   methods: {
-    // 牌洲按钮点击事件
+    // 拍照按钮点击事件
     async takePhoto() {
       const that = this;
       uni.createCameraContext().takePhoto({
@@ -74,19 +85,33 @@ export default {
     error(e) {
       console.log(e.detail);
     },
+		changeHeight(){
+			uni.getSystemInfo({
+			    success: (res)=> {
+						this.height=res.screenHeight;
+			        console.log(res.screenHeight);
+			    }
+			});
+		}
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .scan-img{
-  opacity: 0.4;
+  /* opacity: 0.4; */
   width: 100%;
-  height:500upx;
 }
-.scan-text{
+.scantext{
   font-size: 20px;
   text-align: center;
   line-height: 60upx;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	z-index: 99999999;
+}
+.camercss{
+	z-index: -1;
 }
 </style>

@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path":"pages/miniTest/faceid/index",
+			"style": {
+				 "navigationStyle": "custom"
+			}
+		},
+		{
 			"path": "pages/ucenter/ucenter"
 			// "style": {
 			// 	 "navigationStyle": "custom",
@@ -23,10 +29,10 @@
 		}, 
 		{
 			"path": "pages/miniTest/express"
-		},
-		{
-			"path": "pages/miniTest/faceid/index"
 		}
+		// {
+		// 	"path": "pages/miniTest/faceid/index"
+		// }
 	],
 	"tabBar": {
 		"color": "#000000",

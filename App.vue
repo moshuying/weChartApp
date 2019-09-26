@@ -4,9 +4,13 @@
 			console.log('App Launch');
 			uni.getSystemInfo({
 			    success: (res)=> {
+						this.systemInfo=res;
 			        console.log(res);
 			    }
 			});
+		},
+		globalData:{
+			systemInfo:{}
 		},
 		onShow: function() {
 			console.log('App Show')

@@ -48,7 +48,7 @@ export default {
     },
 		navgo3(){
 		  uni.navigateTo({
-		    url: 'pages/miniTest/faceid/index'
+		    url: '/pages/miniTest/faceid/index'
 		  });
 		}
   }
