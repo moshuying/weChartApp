@@ -1,11 +1,8 @@
 <template>
 	<view class="center">
-		<view class="logo" @click="goLogin" :hover-class="!login ? 'logo-hover' : ''">
-			<image class="logo-img" :src="login ? uerInfo.avatarUrl :avatarUrl"></image>
-			<view class="logo-title">
-				<text class="uer-name">Hi，{{login ? uerInfo.name : '您未登录'}}</text>
-				<text class="go-login-navigat-arrow navigat-arrow" v-if="!login">&#xe65e;</text>
-			</view>
+		<view class="userinfo">
+			<view class="userinfo-avatar"><open-data type="userAvatarUrl"></open-data></view>
+			<open-data type="userNickName"></open-data>
 		</view>
 		<view class="center-list">
 			<view class="center-list-item border-bottom">
@@ -42,54 +39,94 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				login: false,
-				avatarUrl: '/static/logo.png',
-				uerInfo: {}
+	import config from '@/common/config.js'
+export default {
+	data() {
+		return {
+			login: false,
+			avatarUrl: '/static/logo.png',
+			uerInfo: {}
+		};
+	},
+	mounted() {
+		// this.getUserInfo();
+		this.goLogin()
+		// 暂不考虑兼容性
+		// if (uni.getExtConfig) {
+		// 	uni.getExtConfig({
+		// 		success(res) {
+		// 			console.log(res.extConfig);
+		// 		}
+		// 	});
+		// }
+	},
+	methods: {
+		goLogin() {
+			uni.login({
+				provider: 'weixin',
+				success: res => {
+					console.log(res.code);
+					uni.request({
+						method:'get',
+						url:config.pathUrl+'/jscode2session?code='+res.code,
+						success:(resinfo)=>{
+							console.log(resinfo)
+						}
+					})
+				}
+			});
+			if (!this.login) {
+				console.log('点击前往登录');
 			}
 		},
-		methods: {
-			goLogin() {
-				if (!this.login) {
-					console.log('点击前往登录');
+		getUserInfo() {
+			// 查看是否授权
+			uni.getSetting({
+				success(res) {
+					if (res.authSetting['scope.userInfo']) {
+						// 已经授权，可以直接调用 getUserInfo 获取头像昵称
+						uni.getUserInfo({
+							success: function(res) {
+								console.log(res.userInfo);
+							}
+						});
+					}
 				}
-			}
+			});
 		}
 	}
+};
 </script>
 
 <style>
-	/* #ifndef APP-PLUS-NVUE */
-	@font-face {
-		font-family: texticons;
-		font-weight: normal;
-		font-style: normal;
-		src: url('~@/static/text-icon.ttf') format('truetype');
-	}
+/* #ifndef APP-PLUS-NVUE */
+@font-face {
+	font-family: texticons;
+	font-weight: normal;
+	font-style: normal;
+	src: url('~@/static/text-icon.ttf') format('truetype');
+}
 
-	page {
-		background-color: #f8f8f8;
-	}
+page {
+	background-color: #f8f8f8;
+}
 
-	/* #endif*/
+/* #endif*/
 
-	/* 解决头条小程序字体图标不显示问题，因为头条运行时自动插入了span标签，且有全局字体 */
-	/* #ifdef MP-TOUTIAO */
-	text :not(view) {
-		font-family: texticons;
-	}
+/* 解决头条小程序字体图标不显示问题，因为头条运行时自动插入了span标签，且有全局字体 */
+/* #ifdef MP-TOUTIAO */
+text :not(view) {
+	font-family: texticons;
+}
 
-	/* #endif */
+/* #endif */
 
-	.center {
-		flex: 1;
-		flex-direction: column;
-		background-color: #f8f8f8;
-	}
-
-	.logo {
+.center {
+	flex: 1;
+	flex-direction: column;
+	background-color: #f8f8f8;
+}
+.logo {
 		width: 750upx;
 		height: 240upx;
 		padding: 20upx;
@@ -116,73 +153,100 @@
 		flex-direction: row;
 		margin-left: 20upx;
 	}
+.uer-name {
+	height: 60upx;
+	line-height: 60upx;
+	font-size: 38upx;
+	color: #000;
+}
 
-	.uer-name {
-		height: 60upx;
-		line-height: 60upx;
-		font-size: 38upx;
-		color: #000;
-	}
+.go-login-navigat-arrow {
+	font-size: 38upx;
+	color: #ffffff;
+}
 
-	.go-login-navigat-arrow {
-		font-size: 38upx;
-		color: #FFFFFF;
-	}
+.login-title {
+	height: 150upx;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20upx;
+}
 
-	.login-title {
-		height: 150upx;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin-left: 20upx;
-	}
+.center-list {
+	flex-direction: column;
+	background-color: #ffffff;
+	margin-top: 20upx;
+	width: 750upx;
+}
 
-	.center-list {
-		flex-direction: column;
-		background-color: #FFFFFF;
-		margin-top: 20upx;
-		width: 750upx;
-	}
+.center-list-item {
+	height: 90upx;
+	width: 750upx;
+	flex-direction: row;
+	padding: 0upx 20upx;
+}
 
-	.center-list-item {
-		height: 90upx;
-		width: 750upx;
-		flex-direction: row;
-		padding: 0upx 20upx;
-	}
+.border-bottom {
+	border-bottom-width: 1upx;
+	border-color: #c8c7cc;
+	border-bottom-style: solid;
+}
 
-	.border-bottom {
-		border-bottom-width: 1upx;
-		border-color: #c8c7cc;
-		border-bottom-style: solid;
-	}
+.list-icon {
+	width: 40upx;
+	height: 90upx;
+	line-height: 90upx;
+	font-size: 34upx;
+	color: #2f85fc;
+	text-align: center;
+	font-family: texticons;
+	margin-right: 20upx;
+}
 
-	.list-icon {
-		width: 40upx;
-		height: 90upx;
-		line-height: 90upx;
-		font-size: 34upx;
-		color: #2F85FC;
-		text-align: center;
-		font-family: texticons;
-		margin-right: 20upx;
-	}
+.list-text {
+	height: 90upx;
+	line-height: 90upx;
+	font-size: 34upx;
+	color: #555;
+	flex: 1;
+}
 
-	.list-text {
-		height: 90upx;
-		line-height: 90upx;
-		font-size: 34upx;
-		color: #555;
-		flex: 1;
-	}
+.navigat-arrow {
+	height: 90upx;
+	width: 40upx;
+	line-height: 90upx;
+	font-size: 34upx;
+	color: #555;
+	text-align: right;
+	font-family: texticons;
+}
+.userinfo {
+	position: relative;
+	width: 750rpx;
+	height: 320rpx;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
-	.navigat-arrow {
-		height: 90upx;
-		width: 40upx;
-		line-height: 90upx;
-		font-size: 34upx;
-		color: #555;
-		text-align: right;
-		font-family: texticons;
-	}
+.userinfo-avatar {
+	overflow: hidden;
+	display: block;
+	width: 160rpx;
+	height: 160rpx;
+	margin: 20rpx;
+	margin-top: 50rpx;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo text {
+	/* color: #fff; */
+	font-size: 14px;
+	background-color: #c0c0c0;
+	border-radius: 40%;
+}
 </style>

@@ -3,9 +3,12 @@
     <div @click="navgo()">
       <testImgBox :imgsrc="imgsrcList[0]" :text="textList[0]" :time="timeList[0]"/>
     </div>
-   <!-- <div @click="navgo2()">
+   <div @click="navgo2()">
       <testImgBox :imgsrc="imgsrcList[1]" :text="textList[1]" :time="timeList[1]"/>
-    </div> -->
+    </div>
+		<div @click="navgo3()">
+		  <testImgBox :imgsrc="imgsrcList[2]" :text="textList[2]" :time="timeList[2]"/>
+		</div>
   </div>
 </template>
 
@@ -18,9 +21,15 @@ export default {
   },
   data() {
     return{
-      textList:['天气查询 使用百度地图api','自定义爬虫实现快递单号查询','threejs'],
-      imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',config.baseurl+'/wechat/miniTest/test/express.png',config.baseurl+'/wechat/miniTest/test/express.png'],
-      timeList:['2019年9月11日10:52:37','2019年9月18日20:30:39','2019年9月23日10:45:34']
+      textList:['天气查询 使用百度地图api',
+								'自定义爬虫实现快递单号查询',
+								'人脸识别'],
+      imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',
+									config.baseurl+'/wechat/miniTest/test/express.png',
+									config.baseurl+'/wechat/miniTest/test/express.png'],
+      timeList:['2019年9月11日10:52:37',
+								'2019年9月18日20:30:39',
+								'2019年9月23日10:45:34']
     }
   },
   mounted() {
@@ -36,7 +45,12 @@ export default {
       uni.navigateTo({
         url: '/pages/miniTest/express'
       });
-    }
+    },
+		navgo3(){
+		  uni.navigateTo({
+		    url: 'pages/miniTest/faceid/index'
+		  });
+		}
   }
 };
 </script>
