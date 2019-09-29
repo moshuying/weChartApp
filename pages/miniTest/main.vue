@@ -24,9 +24,9 @@ export default {
       textList:['天气查询 使用百度地图api',
 								'自定义爬虫实现快递单号查询',
 								'人脸识别'],
-      imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',
-									config.baseurl+'/wechat/miniTest/test/express.png',
-									config.baseurl+'/wechat/miniTest/test/express.png'],
+      imgsrcList:[config.baseurl+'/static/wechat/miniTest/test/weatherTemp.png',
+									config.baseurl+'/static/wechat/miniTest/test/express.png',
+									config.baseurl+'/static/wechat/miniTest/test/express.png'],
       timeList:['2019年9月11日10:52:37',
 								'2019年9月18日20:30:39',
 								'2019年9月23日10:45:34']
@@ -38,12 +38,12 @@ export default {
   methods: {
     navgo(){
       uni.navigateTo({
-        url: '/pages/miniTest/weather'
+        url: '/pages/miniTest/weather/index'
       });
     },
     navgo2(){
       uni.navigateTo({
-        url: '/pages/miniTest/express'
+        url: '/pages/miniTest/express/index'
       });
     },
 		navgo3(){
