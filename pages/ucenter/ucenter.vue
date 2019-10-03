@@ -1,3 +1,13 @@
+<!--
+ * #Description :墨抒颖
+ * #Author :墨抒颖
+ * #Date :2019-09-22 23:20:46
+ * #LastEditTime :2019-09-22 23:20:46
+ * #LastEditors :墨抒颖
+ * #Github :https://github.com/moshuying
+ * #Gitee :https://gitee.com/moshuying
+ * #Blogs :https://blog.csdn.net/qq_34846662
+ -->
 <template>
 	<view class="center">
 		<view class="userinfo">
@@ -68,7 +78,7 @@ export default {
 					console.log(res.code);
 					uni.request({
 						method:'get',
-						url:config.pathUrl+'/jscode2session?code='+res.code,
+						url:config.baseurl+'/jscode2session?code='+res.code,
 						success:(resinfo)=>{
 							console.log(resinfo)
 						}
