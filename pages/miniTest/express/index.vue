@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import config from '@/common/config.js'
 export default {
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
       console.log(this.queryId);
       let res = await uni.request({
         method: "GET",
-        url: "http://47.107.231.9:7002/express",
+        url: config.baseurl+"/express",
         data: { queryId: this.queryId }
       });
       this.res = JSON.parse(JSON.stringify(res[1].data.data));
