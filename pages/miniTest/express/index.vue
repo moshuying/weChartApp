@@ -81,6 +81,7 @@ $borderColor: red;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
+		overflow: hidden;
     .list {
       text-align: center;
       width: 4rem;
