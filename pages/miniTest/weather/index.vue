@@ -2,7 +2,7 @@
  * SDescription :墨抒颖
  * #Author :墨抒颖
  * #Date :2019-09-22 23:20:46
- * #LastEditTime :2019-10-03 09:10:37
+ * #LastEditTime :2019-10-09 09:23:17
  * #LastEditors :墨抒颖
  * #Github :https://github.com/moshuying
  * #Gitee :https://gitee.com/moshuying
@@ -28,9 +28,9 @@
         data-weather="2"
         class="rainImgText"
         mode="widthFix"
-        :src="mainUrl+'/static/wechat/miniTest/rain_text.png'"
+        :src="mainUrl+'/wechat/miniTest/rain_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/static/wechat/miniTest/rain_windows.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/miniTest/rain_windows.png'" />
     </view>
     <!-- 下雪天 -->
     <view
@@ -51,9 +51,9 @@
         data-weather="1"
         class="rainImgText"
         mode="widthFix"
-        :src="mainUrl+'/static/wechat/miniTest/snow_text.png'"
+        :src="mainUrl+'/wechat/miniTest/snow_text.png'"
       />
-      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/static/wechat/miniTest/snow_decorate.png'" />
+      <image class="rainImgWindows" mode="widthFix" :src="mainUrl+'/wechat/miniTest/snow_decorate.png'" />
     </view>
   </div>
 </template>
@@ -130,10 +130,10 @@ export default {
 <style lang="scss">
 @import '../../../common/config.scss';
 .snowBG{
-  background-image: url(''+$weatherMainUrl+'/static/wechat/miniTest/snow_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/miniTest/snow_background.jpg');
 }
 .rainBG{
-  background-image: url(''+$weatherMainUrl+'/static/wechat/miniTest/rain_background.jpg');
+  background-image: url(''+$weatherMainUrl+'/wechat/miniTest/rain_background.jpg');
 }
 .viewBg {
   background-repeat: no-repeat;

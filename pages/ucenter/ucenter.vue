@@ -2,7 +2,7 @@
  * #Description :墨抒颖
  * #Author :墨抒颖
  * #Date :2019-09-22 23:20:46
- * #LastEditTime :2019-09-22 23:20:46
+ * #LastEditTime :2019-10-09 09:30:30
  * #LastEditors :墨抒颖
  * #Github :https://github.com/moshuying
  * #Gitee :https://gitee.com/moshuying
@@ -16,33 +16,33 @@
 		</view>
 		<view class="center-list">
 			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xe60f;</text>
+				<text class="list-icon"></text> <!--icon-->
 				<text class="list-text">账号管理</text>
-				<text class="navigat-arrow">&#xe65e;</text>
+				<text class="navigat-arrow"></text> <!--icon-->
 			</view>
 			<view class="center-list-item">
-				<text class="list-icon">&#xe639;</text>
+				<text class="list-icon"></text> <!--icon-->
 				<text class="list-text">新消息通知</text>
-				<text class="navigat-arrow">&#xe65e;</text>
+				<text class="navigat-arrow"></text> <!--icon-->
 			</view>
 		</view>
 		<view class="center-list">
 			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xe60b;</text>
+				<text class="list-icon"></text> <!--icon-->
 				<text class="list-text">帮助与反馈</text>
-				<text class="navigat-arrow">&#xe65e;</text>
+				<text class="navigat-arrow"></text> <!--icon-->
 			</view>
 			<view class="center-list-item">
-				<text class="list-icon">&#xe65f;</text>
+				<text class="list-icon"></text> <!--icon-->
 				<text class="list-text">服务条款及隐私</text>
-				<text class="navigat-arrow">&#xe65e;</text>
+				<text class="navigat-arrow"></text> <!--icon-->
 			</view>
 		</view>
 		<view class="center-list">
 			<view class="center-list-item">
-				<text class="list-icon">&#xe614;</text>
+				<text class="list-icon"></text> <!--icon-->
 				<text class="list-text">关于应用</text>
-				<text class="navigat-arrow">&#xe65e;</text>
+				<text class="navigat-arrow"></text> <!--icon-->
 			</view>
 		</view>
 	</view>

@@ -15,7 +15,7 @@
 		class="camercss">
 		<cover-view class="scantext">{{tips}}</cover-view>
       <cover-image :style="'width: 100%; height:'+height+'px;'" 
-										:src="mainUrl+'/static/wechat/miniTest/scan-img.png'"
+										:src="mainUrl+'/wechat/miniTest/scan-img.png'"
 										class="scan-img">
 			</cover-image>
     </camera>

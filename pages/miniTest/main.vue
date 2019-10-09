@@ -2,7 +2,7 @@
  * #Description :墨抒颖
  * #Author :墨抒颖
  * #Date :2019-09-22 23:20:46
- * #LastEditTime :2019-09-22 23:20:46
+ * #LastEditTime :2019-10-09 09:27:00
  * #LastEditors :墨抒颖
  * #Github :https://github.com/moshuying
  * #Gitee :https://gitee.com/moshuying
@@ -34,9 +34,9 @@ export default {
       textList:['天气查询 使用百度地图api',
 								'自定义爬虫实现快递单号查询',
 								'人脸识别'],
-      imgsrcList:[config.baseurl+'/static/wechat/miniTest/test/weatherTemp.png',
-									config.baseurl+'/static/wechat/miniTest/test/express.png',
-									config.baseurl+'/static/wechat/miniTest/test/express.png'],
+      imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',
+									config.baseurl+'/wechat/miniTest/test/express.png',
+									config.baseurl+'/wechat/miniTest/test/express.png'],
       timeList:['2019年9月11日10:52:37',
 								'2019年9月18日20:30:39',
 								'2019年9月23日10:45:34']
