@@ -36,7 +36,7 @@ export default {
 								'人脸识别'],
       imgsrcList:[config.baseurl+'/wechat/miniTest/test/weatherTemp.png',
 									config.baseurl+'/wechat/miniTest/test/express.png',
-									config.baseurl+'/wechat/miniTest/test/express.png'],
+									config.baseurl+'/wechat/miniTest/test/faceid.png'],
       timeList:['2019年9月11日10:52:37',
 								'2019年9月18日20:30:39',
 								'2019年9月23日10:45:34']
